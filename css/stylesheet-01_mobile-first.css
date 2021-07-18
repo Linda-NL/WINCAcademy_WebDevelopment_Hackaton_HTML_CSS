@@ -1,0 +1,934 @@
+/* CSS STYLESHEET FOR MOBILE */
+
+/* website is mobile first */
+
+
+
+/* ------------------------------   DISPLAY   ------------------------------ */
+
+.hidden-for-mobile {
+    display: none;
+}
+
+.hidden-for-desktop {
+    display: inline-block;
+}
+
+
+
+/* ------------------------------   GENERAL   ------------------------------ */
+
+* {
+    /* box model */
+    box-sizing: border-box;
+    /* layout */
+    margin: 0;
+    margin-block: 0;
+    margin-inline: 0;
+    padding: 0;
+    /* typography */
+    list-style-type: none;
+    text-decoration: none;
+    font-family: "Work Sans", "Trebuchet MS", sans-serif;
+}
+
+html, body {
+    /* box model */
+    width: 100%;
+    height: 100%;
+    /* background & borders */
+    background-color: rgb(204,204,255);
+    /* typography */
+    font-family: "Work Sans", "Trebuchet MS", sans-serif;
+    
+}
+
+#container-body {
+    /* box model */
+    width: 100%;
+    height: 100%;
+    /* layout */
+    margin: 0;
+    padding: 0;
+    /* grid parent */
+    display: grid;              
+    grid-template-columns: 100%;
+    grid-template-rows: 32px 1fr 100px;
+    grid-template-areas: 
+        "header"
+        "main"
+        "footer";
+    justify-items: center;
+    align-items: center;
+}
+
+
+
+/* ------------------------------   HEADER   ------------------------------ */
+
+header {
+    /* box model */
+    width: 100%;
+    height: 32px;
+    /* layout */
+    position: fixed;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    /* background & borders */
+    background-color: rgb(178,178,255);
+    /* typography */
+    font-weight: normal;
+}
+
+.container-site-header {                /* CSS GRID PARENT #1 */
+    /* box model */ 
+    width: 100%;
+    height: 32px;
+    /* layout */
+    margin: auto;
+    padding: 0;
+    /* grid parent */
+    display: grid;              
+    grid-template-columns: 12px auto 51px 12px;
+    grid-template-rows: auto 4px;
+    grid-template-areas: 
+        ". site-title site-nav-mobile ."
+        ". . . . ";
+    justify-items: center;
+    align-items: end;
+}
+
+.site-title {                           /* CSS GRID CHILD #1.1 */
+    /* box model */
+    min-width: 50%;
+    height: auto;
+    /* layout */
+    margin: auto auto 0 0;
+    padding: 0;
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: left;
+    /* typography */
+    text-align: left;
+}
+
+p.site-title-text {
+    /* box model */
+    width: auto;
+    height: auto;
+    /* layout */
+    margin: 0;
+    padding: 0;
+    /* typography */
+    text-align: left;
+    font-size: 16px;
+    color: rgb(255,255,255)
+}
+
+
+
+/* ------------------------------   NAVIGATION   ------------------------------   */
+
+.container-site-nav-mobile {            /* CSS GRID CHILD #1.2 */ /* CSS GRID PARENT #2 */
+    /* box model */                     
+    width: 100%;
+    height: 100%;
+    /* layout */
+    margin: 0;
+    padding: 0;
+    grid-column: 3;
+    grid-row: 1;
+    justify-self: center;
+    /* grid parent */
+    display: grid;
+    grid-template-columns: 12px 24px 15px;
+    grid-template-rows: auto;
+    grid-template-areas: 
+        "search . menu";
+    justify-items: end;
+    align-items: end;
+    /* typography */
+    text-align: right;
+}
+
+.site-search-mobile {                   /* CSS GRID CHILD #2.1 */
+    /* box model */
+    width: auto;
+    height: auto;
+    /* layout */
+    margin: auto;
+    margin-bottom: 0;
+    padding: 0;
+    display: inline-block;
+    grid-column: 1;
+    justify-self: end;
+    align-self: end;
+}
+
+.icon-search {
+    /* box model */
+    width: 12px;
+    height: 12px;
+    /* layout */
+    margin: auto;
+    padding: 0;
+    padding-bottom: 2px;
+    vertical-align: bottom;
+}
+
+.site-menu-mobile {                     /* CSS GRID CHILD #2.2 */
+    /* box model */
+    width: auto;
+    height: auto;
+    /* layout */
+    margin: auto;
+    margin-bottom: 0;
+    padding: 0;
+    display: inline-block;
+    grid-column: 3;
+    justify-self: end;
+    align-self: end;
+}
+
+.icon-menu {
+    /* box model */
+    width: 15px;
+    height: 12px;
+    /* layout */
+    
+    padding-bottom: 2px;
+    vertical-align: bottom;
+}
+
+
+/* >>> SPECIFIC STYLING  ONLY(!) FOR MENU-MOBILE AND SEARCH-MOBILE PAGES <<< */ 
+/* because of using no javascript for toggle options */
+
+#menu-mobile, #search-mobile {
+    /* box model */
+    width: 100%;
+    height: 100%;
+    /* background & borders */
+    background-color: rgb(178,178,255);
+}
+
+.menu-mobile, .search-mobile {          /* CSS GRID PARENT #3 */
+    /* box model */
+    width: 100%;
+    height: 100%;
+    /* layout */
+    margin: 0;
+    padding: 0;
+    grid-row: 2;
+    /* grid parent */
+    display: grid;              
+    grid-template-columns: 12px 1fr 12px;
+    grid-template-rows: 8px auto auto 12px;
+    grid-template-areas: 
+        ". . ."    
+        ". site-nav-mobile ."
+        ". site-language ."
+        ". . .";
+    justify-items: center;
+    align-items: center;
+    /* typography */
+    font-weight: normal;
+    color: rgb(0, 0, 0)
+}
+
+#site-nav-mobile {                      /* CSS GRID CHILD #3.1 */
+    /* layout */
+    display: inline-block;
+    grid-column: 2;
+    grid-row: 2;
+    justify-self: center;
+    align-self: center;
+
+}
+
+#site-nav-mobile ul {                       
+    /* box model */
+    width: auto;
+    height: auto;
+    /* layout */
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    /* typography */
+    list-style-type: none;
+}
+
+li.nav-style-1 a {
+    /* layout */
+    margin: 0;
+    padding: 0;
+    /* typography */
+    text-decoration: 0;
+    text-align: right;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 1.5em;
+    color: rgb(0, 0, 0)
+}
+
+li.nav-style-1:before {
+    /* typography */
+    content: ">";
+    padding-right: 12px;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 1.5em;
+}
+
+li.nav-style-2 a {
+    /* layout */
+    margin: 0;
+    padding: 0px;
+    /* typography */
+    text-decoration: 0;
+    text-align: right;
+    font-size: 18px;
+    line-height: 1.5em;
+    color: rgb(0, 0, 0)
+}
+
+li.nav-style-2:before {
+    /* layout */
+    padding: 48px;
+    /* typography */
+    content: "/";
+    padding-right: 2px;
+    font-size: 18px;
+    line-height: 1.5em;
+}
+
+#site-nav-mobile a:hover {
+    /* typography */
+    text-decoration: underline;
+}
+
+p#search-bar-mobile {
+    padding-top: 100px;
+    text-align: center;
+    line-height: 3em;
+}
+
+#site-search-bar {
+    /* box model */ 
+    width: auto;
+    height: auto;
+    /* layout */
+    margin: 0;
+    margin-left: auto;
+    margin-right: 9px;
+    padding: 1px;
+    display: inline-block;
+    /* background & borders */
+    border: none;
+    /* typography */
+    font-size: 24px;
+    color: rgb(255,255,255);
+}
+
+#site-search-bar:hover {
+    /* box model */ 
+    width: auto;
+    height: auto;
+    /* layout */
+    margin: 0;
+    padding: 1px;
+    display: inline-block;
+    /* background & borders */
+    background-color: rgb(102,102,255);
+    opacity: 1;
+    /* typography */
+    font: normal 24px "Work Sans", sans-serif;
+    color: rgb(255,255,255);
+}
+
+input[type="search"]:focus {
+    /* background & borders */
+    border-width: 1px;
+    border-style:  solid;
+    border-color:  rgb(102,102,255);
+    background-color: rgb(255,255,255);
+    /* typography */
+    font-family: "Work Sans", "Trebuchet MS", sans-serif;
+    font-weight: normal;
+    font-size: 16px; 
+    color: rgb(102,102,255);
+}
+
+input[type="search"]::-webkit-search-cancel-button {         
+    -webkit-appearance: none;
+    height: 9px;
+    width: 9px;
+    background-color: rgb(102,102,255);
+    /* background-image: url("img/icon-close-white.png");   ik krijg de background-image niet visible, later nogmaals naar kijken! */
+    }
+
+#img-loupe {
+    /* box model */ 
+    width: 18px;
+    height: 18px;
+    /* layout */
+    margin: 0;
+    margin-left: auto;
+    margin-right: 0;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+
+
+/* ------------------------------   MAIN   ------------------------------ */
+
+/* >>> CONTENT: GENERAL LAYOUT <<< */
+
+main {                                  /* CSS GRID CHILD */
+    /* box model */
+    width: 100%;
+    height: 100%;
+    /* layout */
+    margin: 0;
+    padding: 0;
+    grid-row: 2;
+    /* typography */
+    font-weight: normal;
+    font-size: 18px;
+    color: rgb(0, 0, 0)
+}
+
+.container-site-content {              /* CSS GRID PARENT */
+    /* box model */
+    width: auto;
+    height: auto;
+    /* layout */
+    margin: auto 12px;
+    padding: 0;
+    /* grid parent */
+    display: grid;
+    grid-template-columns: auto;
+    justify-items: center;
+    align-items: start;
+    /* typography */
+    text-align: left;
+}
+
+
+/* >>> CONTENT: GENERAL STYLING <<< */
+    
+h1 {
+    margin-bottom: 16px;
+    /* typography */
+    text-align: left;
+    font-size: 24px;
+}
+
+p {
+    /* layout */
+    padding-bottom: 8px;
+    /* typography */
+    line-height: 1.5em;
+}
+
+.topic-tag {
+    /* typography */
+    text-align: left;
+    font-size: 20px;
+    color:rgb(178,178,255);
+}
+
+a.hashtags {
+    /* typography */
+    font-size: 14px;
+    color:rgb(204,204,255);
+}
+
+a.hashtags:hover {
+    /* typography */
+    color:rgb(102,102,255);
+}
+
+
+/* >>> CONTENT: QUOTES ON OVERVIEW PAGES <<< */
+
+.quote {                                /* CSS GRID CHILD */
+    /* box model */
+    width: 100%;
+    min-width: 100%;
+    height: auto;
+    /* layout */
+    margin: 12px auto;
+    padding: 0;
+    /* background & borders */
+    background-color: rgb(102,102,255);
+}
+
+.quote-text {
+    /* layout */
+    margin: 16px 12px 24px 12px;
+    padding: 0;
+    padding-top: 12px;
+    /* background & borders */
+    border-top: 1px solid rgb(255,255,255);
+    /* typography */
+    text-align: center;
+    font-size: 18px;
+    line-height: 2em;
+    color:rgb(255,255,255)
+}
+
+.quotation-mark {
+    /* typography */
+    font-size: 32px;
+}
+
+
+/* >>> CONTENT: ARTICLE SUMMARIES ON OVERVIEW PAGES <<< */
+
+.article-summary {                      /* CSS GRID CHILD */
+    /* box model */
+    width: 100%;
+    min-width: 100%;
+    height: auto;
+    /* layout */
+    margin: 12px auto;
+    padding: 0;
+    /* grid parent */
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto;
+    justify-content: center;
+    align-content: start;
+    /* background & borders */
+    background-color: rgb(255,255,255)
+}
+
+.article-summary .overview-image {
+    /* box model */
+    width: 100%;
+    min-width: 100%;
+    height: auto;
+    /* layout */
+    margin: 0;
+    padding: 0;
+    grid-row: 1;
+}
+
+.article-summary .article-summary-text {
+    /* box model */
+    width: 100%;
+    height: auto;
+    /* layout */
+    margin: 0;
+    padding: 12px 12px 24px 12px;
+    grid-row: 2;
+}
+
+.article-summary a.read-more {
+    /* layout */
+    text-decoration: underline;
+    color: rgb(0, 0, 0)
+}
+
+.article-summary a.read-more:hover {
+    /* layout */
+    font-weight: bold;
+}
+
+.article-summary .hashtags {
+    /* box model */
+    width: 100%;
+    height: auto;
+    /* layout */
+    margin: 0;
+    margin-bottom: 24px;
+    padding: 0;
+    grid-row: 3;
+    justify-self: center;
+    /* typography */
+    text-align: center;
+}
+
+.hashtags li {
+    /* layout */
+    display: inline;
+}
+
+
+/* >>> CONTENT: INDIVIDUAL IMAGES ON OVERVIEW PAGES <<< */
+
+.overview-image {                      /* CSS GRID CHILD */
+    /* box model */
+    width: 100%;
+    min-width: 100%;
+    height: auto;
+    /* layout */
+    margin: 12px auto;
+    padding: 0;
+}
+
+.overview-image img {
+    /* box model */
+    width: 100%;
+    height: auto;
+    /* layout */
+    margin: 0;
+    padding: 0;
+    vertical-align: bottom;
+}
+
+
+/* >>> CONTENT: INDIVIDUAL ARTICLE <<< */
+
+/* under construction: this part is not made yet in html */
+
+
+/* >>> CONTENT: CONTACT FORM <<< */
+
+.contact-form {                         /* CSS GRID CHILD */
+    /* box model */
+    width: 100%;
+    min-width: 100%;
+    height: auto;
+    /* layout */
+    margin: 12px auto;
+    padding: 12px 12px 24px 12px;
+    /* background & borders */
+    background-color: rgb(255,255,255)
+}
+
+form#contact-form {
+    /* box model */
+    width: 100%;
+    height: auto;
+    /* layout */
+    margin: 0;
+    padding: 0;
+    
+}
+
+p.contact-form-item {
+    /* box model */
+    width: 100%;
+    height: auto;
+    /* layout */
+    margin: 12px auto;
+    padding: 0;
+    /* grid parent */
+    display: grid;
+    grid-template-columns: 35% auto;
+    grid-template-rows: auto;
+    /* background & borders */
+    background-color: rgb(204,204,255,0.3);
+    /* typography */
+    text-align: left;
+}
+
+p.contact-form-item input,  p.contact-form-item textarea {
+    /* box model */
+    width: auto;
+    height: 100%;
+    /* layout */
+    grid-column: 2;
+    /* background & borders */
+    background-color: rgb(204,204,255,0);
+    border-width: 0;
+    border-style: solid;
+    border-color: rgb(204,204,255);
+    /* typography */
+    text-align: left;
+    font: normal 12px "Work Sans", "Trebuchet MS", sans-serif;
+    line-height: 1.5em;
+}
+
+p.contact-form-item textarea {
+    resize: none;
+}
+
+p.message {
+    /* box model */
+    min-height: 160px;
+    /* layout */
+    align-self: start;
+}
+
+.container-button {
+    /* box model */
+    width: 100%;
+    height: auto;
+    /* layout */
+    margin: auto;
+    padding: 0;
+    /* grid parent */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+button.button-submit {
+    /* box model */
+    width: auto;
+    height: auto;
+    /* layout */
+    margin: auto;
+    margin-top: 12px;
+    padding: 0px 3px 0 3px;
+    grid-column: 2;
+    /* background & borders */
+    background-color: rgb(255,255,255);
+    border-width: 0 0 2px 0;
+    border-style: solid;
+    border-color: rgb(0, 0, 0);
+    /* typography */
+    text-align: center;
+    font: bold 18px "Work Sans", "Trebuchet MS", sans-serif;
+}
+
+button.button-submit:hover {
+    /* background & borders */
+    border-color: rgb(102,102,255);
+    /* typography */
+    color: rgb(102,102,255)
+}
+
+
+/* >>> CONTENT: UNDER CONSTRUCTION <<< */
+
+p#under-construction{
+    /* layout */
+    padding-top: 32px;
+    /* typography */
+    text-align: center;
+    font-weight: bold;
+    line-height: 2em;
+}
+
+p#future-page-info {
+    /* layout */
+    padding-top: 32px;
+    /* typography */
+    text-align: center;
+    font-size: 16px;
+    line-height: 1.5em;
+}
+
+
+
+/* ------------------------------   FOOTER   ------------------------------ */
+
+footer {
+    /* box model */
+    width: 100%;
+    height: 100px;
+    /* layout */
+    margin: 0;
+    padding: 0;
+    grid-row: 3;
+    /* background & borders */
+    background-color: rgb(102,102,255);
+    /* typography */
+    font-weight: normal;
+}
+
+.container-site-footer {                /* GRID PARENT #1 */
+    /* box model */
+    width: 100%;
+    height: 100px;
+    /* layout */
+    margin: 0;
+    padding: 0;
+    /* grid parent */
+    display: grid;              
+    grid-template-columns: 12px auto auto 12px;
+    grid-template-rows: 8px auto 12px;
+    grid-template-areas: 
+        ". . . ."    
+        ". site-nav-bottom site-copyright ."
+        ". . . .";
+    justify-items: center;
+    align-items: center;
+}
+
+.site-nav-bottom {                      /* GRID CHILD #1.1 */
+    /* box model */
+    width: auto;
+    height: auto;
+    /* layout */
+    margin: 0 auto auto 0;
+    padding: 0;
+    display: inline-block;
+    grid-column: 2;
+    grid-row: 2;
+    justify-self: left;
+    align-self: start;              
+}
+
+.site-nav-bottom ul{
+    /* box model */
+    width: auto;
+    height: auto;
+    /* layout */
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    /* typography */
+    list-style-type: none;
+}
+
+.site-nav-bottom li:before {
+    /* typography */
+    content: ">";
+    padding-right: 6px;
+    font-size: 14px;
+    color: rgb(0, 0, 0)
+}
+
+.site-nav-bottom a {
+    /* layout */
+    margin: 0;
+    padding: 0;
+    /* typography */
+    text-decoration: 0;
+    text-align: right;
+    font-size: 14px;
+    color: rgb(0, 0, 0)
+}
+
+.site-nav-bottom a:hover {
+    /* typography */
+    text-decoration: underline;
+    
+}
+
+a.current-page {
+    /* typography */
+    text-decoration: line-through;
+}
+
+.site-copyright {                       /* GRID CHILD #1.2 */
+    /* box model */
+    width: auto;
+    height: auto;
+    /* layout */
+    margin: auto 0 0 auto;
+    padding: 0;
+    display: inline-block;
+    grid-column: 3;
+    grid-row: 2;
+    justify-self: right;
+    align-self: end;
+}
+
+.site-copyright-text {
+    /* box model */
+    width: auto;
+    height: auto;
+    /* typography */
+    text-align: right;
+    font-size: 10px;
+    color: rgb(255,255,255)
+}
+
+
+
+/* >>> SPECIFIC STYLING ONLY(!) FOR MENU-MOBILE AND SEARCH-MOBILE PAGES <<< */ 
+/* because of using no javascript for toggle options */
+
+#site-footer-menu-mobile {
+    /* box model */
+    width: 100%;
+    height: 100px;
+    /* layout */
+    margin: 0;
+    padding: 0;
+    grid-row: 3;
+    /* background & borders */
+    background-color: rgb(204,204,255);
+    /* typography */
+    font-weight: normal;
+}
+
+.container-site-footer-menu-mobile {    /* GRID PARENT #2 */
+    /* box model */
+    width: 100%;
+    height: 100px;
+    /* layout */
+    margin: 0;
+    padding: 0;
+    /* grid parent */
+    display: grid;              
+    grid-template-columns: 12px auto auto 12px;
+    grid-template-rows: 8px auto auto 12px;
+    grid-template-areas: 
+        ". . . ."    
+        ". site-language site-language ."
+        ". . site-copyright-mobile ."
+        ". . . .";
+    justify-items: center;
+    align-items: center;
+}
+
+.site-language {                        /* GRID CHILD #2.1 */
+    /* box model */
+    width: auto;
+    height: auto;
+    /* layout */
+    margin: auto;
+    padding: 0;
+    display: inline-block;
+    grid-column: 2 / span 2;
+    grid-row: 2;
+    justify-self: center;
+    align-self: center;
+    /* typography */
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(255, 255, 255)
+}
+
+.site-language a {
+    /* layout */
+    margin: 0;
+    padding: 0;
+    /* typography */
+    text-decoration: 0;
+    font-size: 20px;
+    color: rgb(255, 255, 255)
+}
+
+.site-language a:hover {
+    /* typography */
+    text-decoration: underline;
+}
+
+a.current-page {
+    /* typography */
+    text-decoration: line-through;
+}
+
+.site-copyright-menu-mobile {           /* GRID CHILD #2.2 */
+    /* box model */
+    width: auto;
+    height: auto;
+    /* layout */
+    margin: auto 0 0 auto;
+    padding: 0;
+    display: inline-block;
+    grid-column: 3;
+    grid-row: 3;
+    justify-self: right;
+    align-self: end;
+}
+
+.site-copyright-menu-mobile-text {
+    /* box model */
+    width: auto;
+    height: auto;
+    /* typography */
+    text-align: right;
+    font-size: 10px;
+    color: rgb(255,255,255)
+}

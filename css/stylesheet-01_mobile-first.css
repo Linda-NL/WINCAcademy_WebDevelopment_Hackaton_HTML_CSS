@@ -630,7 +630,7 @@ a.hashtags:hover {
     background-color: rgb(255,255,255)
 }
 
-form#contact-form {
+form.contact-info {
     /* box model */
     width: 100%;
     height: auto;

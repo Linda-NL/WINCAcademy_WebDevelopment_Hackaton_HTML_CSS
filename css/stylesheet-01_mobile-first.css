@@ -213,7 +213,7 @@ p.site-title-text {
     background-color: rgb(178,178,255);
 }
 
-.menu-mobile, .search-mobile {          /* CSS GRID PARENT #3 */
+.menu-mobile {          /* CSS GRID PARENT #3 */
     /* box model */
     width: 100%;
     height: 100%;
@@ -378,6 +378,36 @@ input[type="search"]::-webkit-search-cancel-button {
     margin-right: 0;
     display: inline-block;
     vertical-align: middle;
+}
+
+.search-mobile {          
+    /* box model */
+    width: 100%;
+    height: 100%;
+    /* layout */
+    margin: 0;
+    padding: 0;
+    grid-row: 2;
+    /* grid parent */
+    display: grid;              
+    grid-template-columns: auto;
+    justify-content: center;
+    align-content: start;
+    /* typography */
+    text-align: center;
+    color: rgb(0, 0, 0)
+}
+
+.search-mobile p{
+    /* box model */ 
+    width: 100%;
+    height: auto;
+    /* layout */
+    margin: 0;
+    padding: 12px 0;
+    /* typography */
+    text-align: center;
+    line-height: 2em;
 }
 
 
